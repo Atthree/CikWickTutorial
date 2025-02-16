@@ -10,4 +10,11 @@ public class Const
 
     }
 
+    public struct WheatTypes
+    {
+        public const string GOLD_WHEAT = "GoldWheat";
+        public const string ROTTEN_WHEAT = "RottenWheat";
+        public const string HOLY_WHEAT = "HolyWheat";
+    }
+
 }
