@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool _canJump;
     [SerializeField] private float _airMultiplier;
     [SerializeField] private float _airDrag;
-    
+
     [Header("Sliding Settings")]
     [SerializeField] private KeyCode _slideKey;
     [SerializeField] private float _slideMultiplier;
@@ -112,8 +112,8 @@ public class PlayerController : MonoBehaviour
             PlayerState.Slide => _slideMultiplier,
             PlayerState.Jump => _airMultiplier,
             _ => 1f
-        };       
-         _playerRigidbody.AddForce(_movementDirection.normalized * _movementSpeed * forceMultiplier, ForceMode.Force);
+        };
+        _playerRigidbody.AddForce(_movementDirection.normalized * _movementSpeed * forceMultiplier, ForceMode.Force);
     }
     private void SetPlayerDrag()
     {
@@ -166,9 +166,10 @@ public class PlayerController : MonoBehaviour
         return _isSliding;
     }
 
-    public void SetMovementSpeed(float speed, float duration){
+    public void SetMovementSpeed(float speed, float duration)
+    {
         _movementSpeed += speed;
-        Invoke(nameof(ResetMovementSpeed),duration);
+        Invoke(nameof(ResetMovementSpeed), duration);
     }
 
     private void ResetMovementSpeed()
@@ -176,13 +177,21 @@ public class PlayerController : MonoBehaviour
         _movementSpeed = _startingMovementSpeed;
     }
 
-    public void SetJumpForce(float jumpForce, float duration){
+    public void SetJumpForce(float jumpForce, float duration)
+    {
         _jumpforce += jumpForce;
-        Invoke(nameof(ResetJumpForce),duration);
+        Invoke(nameof(ResetJumpForce), duration);
     }
 
-    private void ResetJumpForce(){
+    private void ResetJumpForce()
+    {
         _jumpforce = _startingJumpForce;
     }
+
+    public Rigidbody GetPlayerRigidbody()
+    {
+        return _playerRigidbody;
+    }
+
     #endregion
 }
