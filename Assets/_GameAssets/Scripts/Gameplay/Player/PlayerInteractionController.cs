@@ -4,7 +4,8 @@ public class PlayerInteractionController : MonoBehaviour
 {
 
     private PlayerController _playerController;
-    private void Awake() {
+    private void Awake()
+    {
         _playerController = GetComponent<PlayerController>();
     }
     private void OnTriggerEnter(Collider other)
