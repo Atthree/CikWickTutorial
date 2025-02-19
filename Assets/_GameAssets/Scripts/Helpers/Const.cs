@@ -1,6 +1,9 @@
 
 public class Const
 {
+    public struct SceneNames{
+        public const string GAME_SCENE = "GameScene";
+    }
     public struct PlayerAnimations
     {
         public const string IS_MOVİNG = "IsMoving";
