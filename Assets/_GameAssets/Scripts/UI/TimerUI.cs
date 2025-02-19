@@ -79,7 +79,7 @@ public class TimerUI : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(_elapsTİme / 60f);
         int seconds = Mathf.FloorToInt(_elapsTİme % 60f);
-        return  string.Format("{0:00}:{1:00}", minutes, seconds);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     private void UpdateTimerUI()
@@ -92,7 +92,8 @@ public class TimerUI : MonoBehaviour
         _timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    public string GetFinalTime(){
+    public string GetFinalTime()
+    {
         return _finalTime;
     }
 }
