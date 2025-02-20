@@ -22,6 +22,8 @@ public class RottenWheatCollectible : MonoBehaviour, ICollectible
         _playerStateUI.PlayBoosterAnimations(_playerBoosterTransform, _playerBoosterImage,
            _playerStateUI.GetRottenBoosterWheatImage, _wheatDesignSO.ActiveSprite, _wheatDesignSO.PasiveSprite, _wheatDesignSO.ActiveWheatSprite,
            _wheatDesignSO.PasiveWheatSprite, _wheatDesignSO.ResetBoostDuration);
+
+        CameraShake.Instance.ShakeCamera(0.5f,0.5f);
         Destroy(gameObject);
     }
 }
