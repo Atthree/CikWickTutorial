@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 133347283e115d147a5fcce7f47a538f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -543,6 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 3
+  _playerHealthUI: {fileID: 1025091070}
 --- !u!4 &54215381
 Transform:
   m_ObjectHideFlags: 0
@@ -2813,6 +2814,7 @@ MonoBehaviour:
   _eggCounterUI: {fileID: 848896718}
   _winLoseUI: {fileID: 2066380224}
   _maxEggCount: 5
+  _delay: 0.5
 --- !u!4 &394943244
 Transform:
   m_ObjectHideFlags: 0
@@ -4716,7 +4718,7 @@ GameObject:
   - component: {fileID: 853823185}
   - component: {fileID: 853823184}
   - component: {fileID: 853823183}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4856,6 +4858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cde56857ee1ebd47b1e25bd2fed1ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "_playerV\u0130sualTransform": {fileID: 5039072924326426698}
 --- !u!1001 &887949833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7427,6 +7430,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -5323125891530009861, guid: 69ef6ec9a0720ab4181a382ad028a657, type: 3}
+    - {fileID: 59390541038212662, guid: 69ef6ec9a0720ab4181a382ad028a657, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ef6ec9a0720ab4181a382ad028a657, type: 3}
