@@ -12,10 +12,12 @@ public class MenuContollerUI : MonoBehaviour
     {
         _playButton.onClick.AddListener(() => 
         {
+            AudioManager.Instance.Play(SoundType.TransitionSound);
             TransitionManager.Instance.LoadLevel(Const.SceneNames.GAME_SCENE);
         });
         _quittButton.onClick.AddListener(()=>
         {
+            AudioManager.Instance.Play(SoundType.ButtonClickSound);
             Debug.Log("Quitting Game");
             Application.Quit();
         });

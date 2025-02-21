@@ -31,6 +31,7 @@ public class SettignsUI : MonoBehaviour
 
         _mainMenuButton.onClick.AddListener(() => 
         {
+            AudioManager.Instance.Play(SoundType.TransitionSound);
             TransitionManager.Instance.LoadLevel(Const.SceneNames.MENU_SCENE);
         });
     }
@@ -38,6 +39,7 @@ public class SettignsUI : MonoBehaviour
     private void OnSettingsButtonClicked()
     {
         GameManager.Instance.ChangeGameState(GameState.Pause);
+        AudioManager.Instance.Play(SoundType.ButtonClickSound);
         _blackBackgroundObject.SetActive(true);
         _settingsPopupObject.SetActive(true);
 
@@ -45,8 +47,8 @@ public class SettignsUI : MonoBehaviour
         _settingsPopupObject.transform.DOScale(1.5f, _animationDuration).SetEase(Ease.OutBack);
     }
     private void OnResumeButtonClicked()
-    {
-
+    {     
+        AudioManager.Instance.Play(SoundType.ButtonClickSound);
         _blackBackgroundImage.DOFade(0f, _animationDuration).SetEase(Ease.Linear);
         _settingsPopupObject.transform.DOScale(0f, _animationDuration).SetEase(Ease.OutExpo).OnComplete(() =>
         {

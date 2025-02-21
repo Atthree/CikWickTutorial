@@ -14,17 +14,21 @@ public class LosePopup : MonoBehaviour
 
     private void OnEnable()
     {
-        _timerText.text = _timerUI.GetFinalTime();       
+        BackgroundMusic.Instance.PlayBackgroundMusic(false);
+        AudioManager.Instance.Play(SoundType.LoseSound);
+        _timerText.text = _timerUI.GetFinalTime();
 
-        _tryAgainButton.onClick.AddListener(OnTryAgainButtonClicked); 
-        _mainMenuButton.onClick.AddListener(() => 
+        _tryAgainButton.onClick.AddListener(OnTryAgainButtonClicked);
+        _mainMenuButton.onClick.AddListener(() =>
         {
             TransitionManager.Instance.LoadLevel(Const.SceneNames.MENU_SCENE);
+            AudioManager.Instance.Play(SoundType.TransitionSound);
         });
     }
 
     private void OnTryAgainButtonClicked()
     {
-            TransitionManager.Instance.LoadLevel(Const.SceneNames.GAME_SCENE);
+        AudioManager.Instance.Play(SoundType.TransitionSound);
+        TransitionManager.Instance.LoadLevel(Const.SceneNames.GAME_SCENE);
     }
 }
